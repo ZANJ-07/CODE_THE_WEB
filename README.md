@@ -1,1 +1,1 @@
-# Code-the-web  THE CODE EDITOR
+# CODE EDITOR
