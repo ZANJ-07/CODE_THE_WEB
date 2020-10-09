@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code-The-Web</title>
+    <style type="text/css">
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        
+    }
+    .main{
+        height: 100vh;
+        display: flex;
+       
+       
+       
+
+    }
+    
+
+    
+    .code-area{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        border-right: 1px solid #555;
+        border: none;
+        
+    }
+    .code-area textarea{
+        resize:none;
+        outline: none;
+        width: 100%;
+        height: 33.33%;
+        font-size: 18px;
+        padding: 10px;
+        background-color: black;
+        color: whitesmoke;
+        border-radius: 2rem;
+        border: 3px solid;
+        border-color: white;
+         
+    }
+    .headr{
+      width: 100%;
+      height: 125px;
+      background-color: #f9484a;
+background-image: linear-gradient(315deg, #f9484a 0%, #fbd72b 74%);
+     font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+          padding-left: 35%;
+          padding-top: 10px;
+          border-radius: 1.5rem;
+         
+         }
+    .preview-area{
+        width: 50%;
+       
+    }
+    .preview-area iframe{
+        width: 100%;
+        height: 100%;
+        border: 3px solid;
+        border-color: black;
+         border-radius: 2rem;
+      background-color: whitesmoke;
+        
+    }
+
+    .btn{
+        height: 100px ;
+       width: 300px;
+       border-radius: 2rem;
+       font-size: 20px;
+       color: whitesmoke;
+       border: none;
+       background-color: #1fd1f9;
+background-image: linear-gradient(315deg, #1fd1f9 0%, #b621fe 74%);
+
+
+    }
+    .btn:hover{
+        border: none;
+        
+    }
+    </style>
+</head>
+<body>
+    <div class="headr"><button class="btn"><h1>Code-The-Web</h1></button> </div>
+      <div class="main">
+    <div class="code-area">
+      <textarea id="htmlcode" placeholder="Write Your Html Code Here" 
+      oninput="showPreview()"></textarea>
+
+      <textarea id="csscode" placeholder="Write Your CSS Code Here" 
+      oninput="showPreview()"></textarea>
+     
+      <textarea id="jscode" placeholder="Write Your JAVASCRIPT Code Here" 
+      oninput="showPreview()"></textarea>
+    </div>
+      <div class="preview-area">
+         
+          <iframe id="preview-window"></iframe>
+      </div>
+    </div>
+           <script type="text/javascript">
+           function showPreview(){
+               var htmlcode = document.getElementById("htmlcode").value;
+               var csscode = "<style>"+ document.getElementById("csscode").value
+                +"</style>"
+               var jscode ="<scri"+"pt>"+ document.getElementById("jscode").
+                value+"</scri"+"pt>";
+                var frame = document.getElementById("preview-window").
+                contentWindow.document;
+                frame.open();
+                frame.write(htmlcode+csscode+jscode);
+                frame.close();
+           }
+        
+            
+            
+        
+        
+        
+        
+        
+        
+        </script>
+
+</body>
+</html>
